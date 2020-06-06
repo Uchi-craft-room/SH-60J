@@ -45,39 +45,39 @@ var light_manager = {
 
         # light 1 ########
         # offsets to aircraft center
-        me.light1_xpos = 60.0;
-        me.light1_ypos = 10.0;
+        me.light1_xpos = -5.0;
+        me.light1_ypos =  0.0;
         me.light1_zpos =  2.5;
 
         # color values
-        me.light1_r = 0.7;
-        me.light1_g = 0.7;
-        me.light1_b = 0.7;
+        me.light1_r = 0.9;
+        me.light1_g = 0.9;
+        me.light1_b = 0.9;
 
         # spot size
-        me.light1_size = 15.0;
-        me.light1_stretch = 2;
+        me.light1_size = 10.0;
+        me.light1_stretch = 1;
 
         # light 2 ########
         # offsets to aircraft center
-        me.light2_xpos = 60.0;
-        me.light2_ypos = -10.0;
+        me.light2_xpos = 80.0;
+        me.light2_ypos =  0.0;
         me.light2_zpos =  2.5;
 
         # color values
-        me.light2_r = 0.7;
-        me.light2_g = 0.7;
-        me.light2_b = 0.7;
+        me.light2_r = 0.9;
+        me.light2_g = 0.9;
+        me.light2_b = 0.9;
 
         # spot size
          me.light2_size = 15.0;
-         me.light2_stretch = 2;
+         me.light2_stretch = 5.5;
 
         # light 3 ########
         # offsets to aircraft center
-        me.light3_xpos =  -2.0;
-        me.light3_ypos = 2.0;
-        me.light3_zpos =  2.5;
+        me.light3_xpos =  2.0;
+        me.light3_ypos =  3.0;
+        me.light3_zpos =  1.5;
 
         # color values
         me.light3_r = 0.1;
@@ -85,13 +85,13 @@ var light_manager = {
         me.light3_b = 0.0;
 
         # spot size
-         me.light3_size = 5.0;
+         me.light3_size = 4.0;
 
         # light 4 ########
         # offsets to aircraft center
-        me.light4_xpos =  -2.0;
-        me.light4_ypos = -2.0;
-        me.light4_zpos =  2.5;
+        me.light4_xpos =  2.0;
+        me.light4_ypos = -3.0;
+        me.light4_zpos =  1.5;
 
         # color values
         me.light4_r = 0.0;
@@ -99,7 +99,7 @@ var light_manager = {
         me.light4_b = 0.0;
 
         # spot size
-        me.light4_size = 5.0;
+        me.light4_size = 4.0;
         
         me.light_manager_timer = maketimer(0.0, func{me.update()});
         
@@ -238,7 +238,7 @@ setlistener("/sim/signals/fdm-initialized", func {
         light_manager.enable_or_disable(node.getValue(), 1);
     }, 1, 0);
 
-    setlistener("/sim/model/SH-60J/lighting/nav-lights", func (node) {
+    setlistener("/controls/lighting/nav-lights", func (node) {
         light_manager.enable_or_disable(node.getValue(), 2);
         light_manager.enable_or_disable(node.getValue(), 3);
     }, 1, 0);
